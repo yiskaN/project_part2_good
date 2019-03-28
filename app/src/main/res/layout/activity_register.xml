@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.RegisterActivity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"></include>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5" />
+
+    <EditText
+        android:id="@+id/fullName"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/ic_action_user"
+        android:ems="10"
+        android:hint="@string/register_fullName"
+        android:inputType="textPersonName"
+        android:background="@color/white"
+        android:textColor="@color/black" />
+
+
+    <EditText
+        android:id="@+id/password_editext"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/ic_action_password"
+        android:ems="10"
+        android:hint="@string/register_password"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/ic_action_id"
+        android:ems="10"
+        android:hint="@string/register_id"
+        android:inputType="number"
+        android:background="@color/white"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/ic_action_phone"
+        android:ems="10"
+        android:hint="@string/register_phone"
+        android:inputType="phone"
+        android:background="@color/white"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/ic_action_email"
+        android:ems="10"
+        android:hint="@string/register_email"
+        android:inputType="textEmailAddress"
+        android:background="@color/white"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/ccNumber"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/ic_action_creditcard"
+        android:ems="10"
+        android:hint="@string/register_ccNumber"
+        android:inputType="number"
+        android:background="@color/white"
+        android:textColor="@color/black"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5" />
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="75dp"
+        android:background="@color/white"
+        android:shadowColor="#ffffff"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="@string/register_textview"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+</android.support.constraint.ConstraintLayout>
