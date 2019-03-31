@@ -34,8 +34,8 @@ public class MyTripsFragment extends android.support.v4.app.Fragment {
     static Context context;
     SearchView searchView;
     ExpendableAdapter adapter;
-    Trip tmpRide;
-    List<Trip> rideList = new ArrayList<>();
+    Trip tmpTrip;
+    List<Trip> tripList = new ArrayList<>();
     List<Driver> driverList = new ArrayList<>();
     Backend instance;
     Driver mDriver;
@@ -98,21 +98,21 @@ public class MyTripsFragment extends android.support.v4.app.Fragment {
     private List<Trip> initItems() {
         List<Trip> result = new ArrayList<>(1000);
         driverList = ((DatabaseFb)instance).getDriverList();
-        rideList = instance.getTripsByDriver(mDriver.getFullName());
+        tripList = instance.getTripsByDriver(mDriver.getFullName());
 
-        for (int i = 0; i < rideList.size(); i++) {
+        for (int i = 0; i < tripList.size(); i++) {
             ExpendableItem item = new ExpendableItem();
-            item.setDestination(rideList.get(i).getDestination());
+            item.setDestination(tripList.get(i).getDestination());
             LocationClass locationClass = new LocationClass(context);
-            Location origin = locationClass.addressToLocation(rideList.get(i).getPlaceBegin());
-            Location destination = locationClass.addressToLocation(rideList.get(i).getDestination());
+            Location origin = locationClass.addressToLocation(tripList.get(i).getPlaceBegin());
+            Location destination = locationClass.addressToLocation(tripList.get(i).getDestination());
             float distance = (float)(Math.round(locationClass.calculateDistance(origin, destination)*100))/100;
             item.setDistance(distance);
-            item.setRideDate(rideList.get(i).getTripDate());
+            item.setTripDate(tripList.get(i).getTripDate());
             ChildItem child = new ChildItem();
-            child.setOrigin(rideList.get(i).getOrigin());
-            child.setStartingTime(rideList.get(i).getStartingTime());
-            child.setPhoneNumber(tripList.get(i).getPhoneNumber());
+            child.setPlaceBegin(tripList.get(i).getPlaceBegin());
+            child.setHourBegin(tripList.get(i).getHourBegin());
+            child.setCostumerTel(tripList.get(i).getCostumerTel());
             item.children.add(child);
             result.add(item);
         }

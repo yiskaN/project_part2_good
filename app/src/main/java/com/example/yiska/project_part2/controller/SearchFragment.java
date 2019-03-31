@@ -1,23 +1,47 @@
 package com.example.yiska.project_part2.controller;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.location.Location;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.yiska.project_part2.model.backend.Backend;
 import com.example.yiska.project_part2.model.backend.BackendFactory;
 import com.example.yiska.project_part2.model.entities.Trip;
 import com.example.yiska.project_part2.R;
 import com.example.yiska.project_part2.model.entities.Driver;
 import java.util.List;
 import java.util.ArrayList;
+
+import android.widget.Filter;
+import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.SearchView;
 
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
+
+import static android.support.v4.content.ContextCompat.checkSelfPermission;
 
 /**
  * Handles the search option
@@ -176,7 +200,7 @@ public class SearchFragment extends android.app.Fragment {
         b.setAutoCancel(true)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setWhen(System.currentTimeMillis())
-                .setSmallIcon(R.drawable.transparent_icon)
+                .setSmallIcon(R.drawable.icon)
                 .setContentTitle("New Ride")
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText("You just added a new ride to " + tmpTrip.getDestination())) //expand
@@ -372,7 +396,7 @@ public class SearchFragment extends android.app.Fragment {
                 distance_txt = itemView.findViewById(R.id.parent_dist);
                 arrow = itemView.findViewById(R.id.expendable_btn);
                 arrow.setOnClickListener(this);
-                plus = itemView.findViewById(R.id.getTrip_btn);
+                plus = itemView.findViewById(R.id.getRide_btn);
                 plus.setOnClickListener(this);
             }
 

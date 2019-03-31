@@ -16,7 +16,7 @@ import com.example.yiska.project_part2.model.datasource.Action;
 import com.example.yiska.project_part2.R;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
-    private FirebaseAuth mAuth;
+    //private FirebaseAuth mAuth;
 
     private EditText fullNameEditext;
     private EditText passwordEditext;
